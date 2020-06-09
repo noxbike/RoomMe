@@ -10,7 +10,7 @@ export const listvideo = [
     {titre: 'avion'},
     {titre: 'maladie'},
     {titre: 'virus'}
-]
+]//titre, synopsis, genre, date add
 
 export function video(){
     var video =[];
@@ -19,3 +19,5 @@ export function video(){
 
     return video;
 }
+
+// rajouté different catégorie de vidéo

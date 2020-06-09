@@ -23,11 +23,16 @@ export default class AutoCompleteText extends React.Component{
     renderSuggestions(){
         const { suggestions } = this.state;
         if(suggestions.length === 0){
-            return null;
+            return(
+            //ici je dois retourner une vue avec ces catégories
+            //créer un nouveau fichier js pour sa
+            <ul>
+                {this.items.map((item) => <li><img alt='imgplaceholder' src='https://via.placeholder.com/150'/>{item}</li>)}
+            </ul>);
         }
         return(
             <ul>
-                {suggestions.map((item) => <li>{item}</li>)}
+                {suggestions.map((item) => <li><img alt='imgplaceholder' src='https://via.placeholder.com/150'/>{item}</li>)}
             </ul>
         );
     }
