@@ -1,15 +1,17 @@
+import batman from '../jacket/batman.jpg';
+
 export const listvideo = [
-    {titre: 'voiture',synopsis: 'la voiture roule', genre: 'drama'},
-    {titre: 'humain',synopsis: 'les humains parle', genre: 'animation'},
-    {titre: 'alien', synopsis: 'les aliens envahissent', genre: 'drama'},
-    {titre: 'robot', synopsis: 'les robots obéissent', genre: 'action'},
-    {titre: 'nature', genre: 'comedie'},
-    {titre: 'inconnue', synopsis: 'les inconnue je ne les connait pas', genre: 'action'},
-    {titre: 'animal', synopsis: 'les animeaux sont mignon', genre: 'show'},
-    {titre: 'molecule', synopsis: 'les molécules sont present partout', genre: 'drama'},
-    {titre: 'avion', synopsis: 'les avion volent', genre: 'vlog'},
-    {titre: 'maladie', synopsis: 'la maladie est dangereux pour la survie', genre: 'aventure'},
-    {titre: 'virus', synopsis: 'les virus sont les pires ennemies des humains', genre: 'aventure'}
+    {titre: 'voiture', src: batman, synopsis: 'la voiture roule', genre: 'drama'},
+    {titre: 'humain', src: batman, synopsis: 'les humains parle', genre: 'action'},
+    {titre: 'alien', src: batman, synopsis: 'les aliens envahissent', genre: 'drama'},
+    {titre: 'robot', src: batman, synopsis: 'les robots obéissent', genre: 'action'},
+    {titre: 'nature', src: batman, genre: 'comedie'},
+    {titre: 'inconnue', src: batman, synopsis: 'les inconnue je ne les connait pas', genre: 'action'},
+    {titre: 'animal', src: batman, synopsis: 'les animeaux sont mignon', genre: 'drama'},
+    {titre: 'molecule', src: batman, synopsis: 'les molécules sont present partout', genre: 'drama'},
+    {titre: 'avion', src: batman, synopsis: 'les avion volent', genre: 'aventure'},
+    {titre: 'maladie', src: batman, synopsis: 'la maladie est dangereux pour la survie', genre: 'aventure'},
+    {titre: 'virus', src: batman, synopsis: 'les virus sont les pires ennemies des humains', genre: 'aventure'}
 ]//titre, synopsis, genre, date add
 
 function trieGenres(){

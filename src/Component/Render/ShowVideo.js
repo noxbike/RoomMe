@@ -14,7 +14,7 @@ export default class ShowVideo extends Component{
             <div>
               <div>{element}</div>
               <ul>
-                {this.videoList.map((video) => video.genre === element ? <li>{video.titre}</li> : '')}
+                {this.videoList.map((video) => video.genre === element ? <li><img src={video.src} alt={video.titre}/></li> : '')}
               </ul>
             </div>  
           )
