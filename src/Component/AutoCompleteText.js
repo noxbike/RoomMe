@@ -1,7 +1,6 @@
 import React from 'react';
-import { titreVideo } from './data/listVideo'
+import { titreVideo, listvideo } from './data/listVideo'
 import ShowVideo from './Render/ShowVideo';
-import batman from './jacket/batman.jpg';
 
 export default class AutoCompleteText extends React.Component{
     constructor (props){
@@ -31,7 +30,15 @@ export default class AutoCompleteText extends React.Component{
         }
         return(
             <ul>
-                {suggestions.map((item) => <li><img alt='imgplaceholder' src={batman}/></li>)}
+                {suggestions.map((item) => 
+                    listvideo.map((element) => 
+                        item === element.titre ? 
+                            <li>
+                                <img src={element.src} alt={element.titre}/>
+                            </li>
+                        : ''
+                    )
+                )}
             </ul>
         );
     }

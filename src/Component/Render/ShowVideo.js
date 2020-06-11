@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { genre, listvideo } from '../data/listVideo';
+import InfoVideo from './InfoVideo.js';
 
 export default class ShowVideo extends Component{
     constructor(props) {
@@ -24,7 +25,10 @@ export default class ShowVideo extends Component{
     render(){
         return(
             <div>
-                {this.affichage()}
+              <InfoVideo/>
+              <div>
+                  {this.affichage()}
+              </div>
             </div>
         );
     }

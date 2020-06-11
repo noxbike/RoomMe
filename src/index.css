@@ -4,12 +4,24 @@ body{
     height: 100vh;
 }
 
+.infovideo{
+    background-color: black;
+    height:200px;
+    color: white;
+}
+
 ul{
     padding: 2%;
     list-style: none;
     display:flex;
     overflow-x: auto;
 }
+
+ul::-webkit-scrollbar 
+{    
+    display: none;
+}
+
 img{
     width:100px;
 }
