@@ -1,10 +1,12 @@
 import React from 'react';
-import { video } from './data/listVideo'
+import { titreVideo } from './data/listVideo'
+import ShowVideo from './Render/ShowVideo';
+import batman from './jacket/batman.jpg';
 
 export default class AutoCompleteText extends React.Component{
     constructor (props){
         super(props);
-        this.items= video();
+        this.items= titreVideo;
         this.state = {
             suggestions: [],
         };
@@ -24,15 +26,12 @@ export default class AutoCompleteText extends React.Component{
         const { suggestions } = this.state;
         if(suggestions.length === 0){
             return(
-            //ici je dois retourner une vue avec ces catégories
-            //créer un nouveau fichier js pour sa
-            <ul>
-                {this.items.map((item) => <li><img alt='imgplaceholder' src='https://via.placeholder.com/150'/>{item}</li>)}
-            </ul>);
+            <ShowVideo/>
+            );
         }
         return(
             <ul>
-                {suggestions.map((item) => <li><img alt='imgplaceholder' src='https://via.placeholder.com/150'/>{item}</li>)}
+                {suggestions.map((item) => <li><img alt='imgplaceholder' src={batman}/></li>)}
             </ul>
         );
     }

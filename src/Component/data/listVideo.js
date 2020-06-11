@@ -12,21 +12,23 @@ export const listvideo = [
     {titre: 'virus', synopsis: 'les virus sont les pires ennemies des humains', genre: 'aventure'}
 ]//titre, synopsis, genre, date add
 
-export function trieGenres(){
-    var genre = [];
+function trieGenres(){
+    let result = [];
     for( let element of listvideo){
-      genre.push(element.genre);
+      result.push(element.genre);
     }
-    genre = Array.from(new Set(genre));
-    return genre;
+    result = Array.from(new Set(result));
+    return result;
 }
 
-export function video(){
-    var video =[];
+function video(){
+    let video = [];
     listvideo.map((element) => 
-    video.push(element.titre))
-
+        video.push(element.titre)
+    )
     return video;
 }
 
+export const genre = trieGenres();
+export const titreVideo = video();
 // rajouté different catégorie de vidéo
