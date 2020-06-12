@@ -2,15 +2,22 @@ body{
     margin: 0px;
     padding: 2px;
     height: 100vh;
-    text-align: center;
+    text-align: left;
     color:white;
     background-color: rgb(30,30,30);
 }
 
+body div, body input{ 
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top:2%;
+}
+
 .infovideo{
     background-color: black;
-    height:200px;
+    height:220px;
     color: white;
+    margin-bottom: 0%;
 }
 
 .infovideo div{
@@ -23,10 +30,29 @@ body{
     justify-content: flex-end;
 }
 
-.infovideo p, .infovideo h1, .infovideo a{
+.infovideo p, .infovideo h4{
+    text-align: left;
     width:50%;
     padding:2%
 }
+
+.list-film{
+    height:285px;
+    overflow-y: auto;
+}
+
+.btn-regarder{
+    margin-top: 0%;
+    width:100%;
+    color:white;
+    background-color: gray;
+}
+
+.btn-regarder a{
+    text-decoration: none;
+    color:white;
+}
+
 ul{
     padding: 2%;
     list-style: none;
@@ -34,12 +60,13 @@ ul{
     overflow-x: auto;
 }
 
-ul::-webkit-scrollbar 
+ul::-webkit-scrollbar, .list-film::-webkit-scrollbar
 {    
     display: none;
 }
 
 img{
+    height:140px;
     width:100px;
 }
 
@@ -47,5 +74,9 @@ li{
     display:flex;
     height:10%;
     margin-right: 20px;
+}
+
+#episode{
+    display:flex;
 }
 

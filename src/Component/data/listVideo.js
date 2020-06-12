@@ -1,18 +1,33 @@
 import batman from '../jacket/batman.jpg';
 
 export const listvideo = [
-    {id: 1, titre: 'voiture', src: batman, synopsis: 'la voiture roule', genre: 'drama'},
-    {id: 2, titre: 'humain', src: batman, synopsis: 'les humains parle', genre: 'action'},
-    {id: 3, titre: 'alien', src: batman, synopsis: 'les aliens envahissent', genre: 'drama'},
-    {id: 4, titre: 'robot', src: batman, synopsis: 'les robots obéissent', genre: 'action'},
-    {id: 5, titre: 'nature', src: batman, genre: 'comedie'},
-    {id: 6, titre: 'inconnue', src: batman, synopsis: 'les inconnue je ne les connait pas', genre: 'action'},
-    {id: 7, titre: 'animal', src: batman, synopsis: 'les animeaux sont mignon', genre: 'drama'},
-    {id: 8, titre: 'molecule', src: batman, synopsis: 'les molécules sont present partout', genre: 'drama'},
-    {id: 9, titre: 'avion', src: batman, synopsis: 'les avion volent', genre: 'aventure'},
-    {id: 10, titre: 'maladie', src: batman, synopsis: 'la maladie est dangereux pour la survie', genre: 'aventure'},
-    {id: 11, titre: 'virus', src: batman, synopsis: 'les virus sont les pires ennemies des humains', genre: 'aventure'}
-]//titre, synopsis, genre, date add
+    {id: 1, titre: 'Heirs', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg', synopsis: 'Héritiers d\'une grosse fortune...' , genre: 'drama'},
+    {id: 2, titre: 'Hitman', src: 'https://fr.web.img5.acsta.net/r_1280_720/medias/nmedia/18/64/61/90/18920333.jpg', synopsis: 'hitman est un tueur...', genre: 'action'},
+    {id: 3, titre: 'Moon lover', src: 'https://www.nautiljon.com/images/drama/00/08/moon_lovers_scarlet_heart_ryeo_2080.jpg', synopsis: 'Il était une fois un prince...', genre: 'drama'},
+    {id: 4, titre: 'Fast an Furious', src: 'https://fr.web.img4.acsta.net/pictures/19/06/13/16/39/3685647.jpg', synopsis: 'Dom doit maintenant faire face...', genre: 'action'},
+    {id: 5, titre: 'Punisher', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg', synopsis: 'Dans une ville ou la délinquance domin...', genre: 'action'},
+    {id: 6, titre: 'Batman', src: batman, synopsis: 'Il y a un héro dans l\'ombre...', genre: 'action'},
+    {id: 7, titre: 'WereWolf', src: 'https://www.nautiljon.com/images/asian-movie/00/29/a_werewolf_boy_1692.jpg', synopsis: 'Un étrange garçon vivant dans la...', genre: 'drama'},
+    {id: 8, titre: 'Ghost', src: 'https://upload.wikimedia.org/wikipedia/en/7/72/Hey_Ghost%2C_Let%27s_Fight_-_Poster.jpg', synopsis: 'Il fait la rencontre d\'une fantome...', genre: 'drama'},
+    {id: 9, titre: 'Jumanji', src: 'https://cdn-s-www.estrepublicain.fr/images/ec8d4371-4cf7-446e-b80b-c6ecc9342c53/BES_06/illustration-jumanji-next-level_1-1577698367.jpg', synopsis: 'ils decouvrirent un jeu dans leur...', genre: 'aventure'},
+    {id: 10, titre: 'Seigneur des anneaux', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjRfQVW19158aqB86-YaHm5irpfTffm3NEyvB2dmG0VGCJyWEO&usqp=CAU', synopsis: 'Un jeune garçon se retrouve...', genre: 'aventure'},
+    {id: 11, titre: 'Avatar', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU', synopsis: 'A la découverte d\'une planète...', genre: 'aventure'}
+]
+
+export const episode = [
+    {id: 1, titre: 'episode 1', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
+    {id: 1, titre: 'episode 2', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
+    {id: 1, titre: 'episode 3', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
+    {id: 1, titre: 'episode 4', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
+    {id: 5, titre: 'episode 1', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 5, titre: 'episode 2', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 5, titre: 'episode 3', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 5, titre: 'episode 4', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 11, titre: 'episode 1', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
+    {id: 11, titre: 'episode 2', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
+    {id: 11, titre: 'episode 3', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
+    {id: 11, titre: 'episode 4', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'}
+];
 
 function trieGenres(){
     let result = [];
