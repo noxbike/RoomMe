@@ -27,22 +27,24 @@ export default class ShowVideo extends Component{
 
   affichage = () => {
     if(this.state.episode > 0){
-      console.log(this.state.episode);
       return(
         <Video id={this.state.episode}/>
       );
     }
     else{
       return(
-        <div className='list-film'>
-          {this.genre.map((element) =>
-            <div>
-              <div>{element}</div>
-              <ul>
-                {this.videoList.map((video) => video.genre === element ? <li onClick={() => this.setState({ taille: video.id - 1})}><img src={video.src} alt={video.titre}/></li> : '')}
-              </ul>
-            </div>  
-          )}
+        <div>
+          {this.renderinfo()}
+          <div className='list-film'>
+            {this.genre.map((element) =>
+              <div>
+                <div>{element}</div>
+                <ul>
+                  {this.videoList.map((video) => video.genre === element ? <li onClick={() => this.setState({ taille: video.id - 1})} key={video.id}><img src={video.src} alt={video.titre}/></li> : '')}
+                </ul>
+              </div>  
+            )}
+          </div>
         </div>
       );
     }
@@ -51,7 +53,6 @@ export default class ShowVideo extends Component{
   render(){
     return( 
       <div>
-        {this.renderinfo()}
         {this.affichage()}
       </div>
     );

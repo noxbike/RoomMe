@@ -15,18 +15,18 @@ export const listvideo = [
 ]
 
 export const episode = [
-    {id: 1, titre: 'episode 1', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
-    {id: 1, titre: 'episode 2', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
-    {id: 1, titre: 'episode 3', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
-    {id: 1, titre: 'episode 4', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
-    {id: 5, titre: 'episode 1', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
-    {id: 5, titre: 'episode 2', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
-    {id: 5, titre: 'episode 3', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
-    {id: 5, titre: 'episode 4', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
-    {id: 11, titre: 'episode 1', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
-    {id: 11, titre: 'episode 2', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
-    {id: 11, titre: 'episode 3', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
-    {id: 11, titre: 'episode 4', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'}
+    {id: 1, episode: 1, src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg', srcvideo: 'https://storage.googleapis.com/double-balm-270706/folder6/23d_1591979133192647.mp4'},
+    {id: 1, episode: 2, src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
+    {id: 1, episode: 3, src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
+    {id: 1, episode: 4, src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
+    {id: 5, episode: 1, src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 5, episode: 2, src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 5, episode: 3, src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 5, episode: 4, src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg'},
+    {id: 11, episode: 1, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
+    {id: 11, episode: 2, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
+    {id: 11, episode: 3, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'},
+    {id: 11, episode: 4, src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU'}
 ];
 
 function trieGenres(){

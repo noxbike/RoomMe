@@ -72,11 +72,13 @@ img{
 
 li{
     display:flex;
+    flex-direction: column;
     height:10%;
     margin-right: 20px;
 }
 
-#episode{
-    display:flex;
+
+#movie .episode, #movie .infovideo{
+ margin-top: 23%;
 }
 
