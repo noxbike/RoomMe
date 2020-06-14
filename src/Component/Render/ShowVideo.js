@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { genre, listvideo, episode } from '../data/listVideo';
+import { genre, listvideo } from '../data/listVideo';
 import InfoVideo from './InfoVideo';
 import Video from './Video';
 
@@ -14,21 +14,20 @@ export default class ShowVideo extends Component{
   renderinfo = () =>{
       var result =  this.videoList[this.state.taille];
       return(
-        <div>
-          <div className='infovideo'>
-            <InfoVideo {...result}/>
-          </div>
+        <div className='renderinfo'>
+          <InfoVideo {...result}/>
           <div className='btn-regarder'>
-            <a onClick={() => this.setState({ episode: result.id})} href='#'>regarder</a>
+            <a onClick={() => this.setState({ episode: result.id})}><strong>Regarder</strong></a>
           </div>
         </div>
       );
   }
 
   affichage = () => {
-    if(this.state.episode > 0){
+    const { episode } = this.state;
+    if(episode > 0){
       return(
-        <Video id={this.state.episode}/>
+        <Video id={episode}/>
       );
     }
     else{
@@ -51,8 +50,11 @@ export default class ShowVideo extends Component{
   }
 
   render(){
+    var { taille } =this.state;
+    var videoselected = this.videoList[taille];
+
     return( 
-      <div>
+      <div className='showVideo' style={{backgroundImage: `url(${videoselected.src})` }}>
         {this.affichage()}
       </div>
     );

@@ -1,43 +1,38 @@
 import  React, { Component } from 'react';
-import { episode } from '../data/listVideo';
-import InfoVideo from './InfoVideo';
+import { episodelist } from '../data/listVideo';
 
 export default class Video extends Component{
     constructor(props){
         super(props);
         this.movie = this.props.id;
-        this.state = { video: 1,}
+        this.state = { episode: 1, movieId: this.movie}
     }
 
     selectEpisode = () =>{
-        let result;
-        for(let element of episode){
-            if(element.id === this.movie && element.episode === this.state.video){
-                if(element.srcvideo){
-                    result = <video controls='true' src={element.srcvideo} width='100%' height='100%'></video>;
-                }
-                else{
-                    result = <p>nothing</p>;
-                }
+        const { movieId, episode } = this.state;
+        for(let element of episodelist){
+            if(element.id === movieId && element.episode === episode){
+                return(element.srcvideo ? 
+                <video controls src={element.srcvideo} width='100%' height='100%'/>
+                : <p>" Prochainement sur la plateforme "</p>);
             }
         }
-
-        return(result);
     }
 
     render(){
+        const { movieId } = this.state;
         return(
             <div id='movie'>
-                <div className='infovideo'>
+                <div className='lecteur-video'>
                 {this.selectEpisode()}
                 </div>
                 <ul className='episode'>
                     {
-                        episode.map((element) => 
-                        element.id === this.movie ? 
-                        <li onClick={() => this.setState({video: element.episode})}>
+                        episodelist.map((element) => 
+                        element.id === movieId ? 
+                        <li onClick={() => this.setState({episode: element.episode})}>
                             <img src={element.src} alt={element.episode}/>
-                            <strong>episode {element.episode}</strong>
+                            <span>Episode {element.episode}</span>
                         </li> : '' )
                     }
                 </ul>

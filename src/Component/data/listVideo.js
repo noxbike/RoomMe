@@ -14,7 +14,7 @@ export const listvideo = [
     {id: 11, titre: 'Avatar', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQF_r6fnn_l8uGg9HFQF3vhskffRUB173jeaA9G6dRbBoZqKNRK&usqp=CAU', synopsis: 'A la découverte d\'une planète...', genre: 'aventure'}
 ]
 
-export const episode = [
+export const episodelist = [
     {id: 1, episode: 1, src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg', srcvideo: 'https://storage.googleapis.com/double-balm-270706/folder6/23d_1591979133192647.mp4'},
     {id: 1, episode: 2, src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},
     {id: 1, episode: 3, src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg'},

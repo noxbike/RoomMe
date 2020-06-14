@@ -1,14 +1,12 @@
 import React from 'react';
-import { titreVideo, listvideo } from './data/listVideo'
-import ShowVideo from './Render/ShowVideo';
+import { titreVideo, listvideo } from '../data/listVideo';
+import Video from './Video';
 
 export default class AutoCompleteText extends React.Component{
     constructor (props){
         super(props);
         this.items= titreVideo;
-        this.state = {
-            suggestions: [],
-        };
+        this.state = { suggestions: [],};
     }
 
     onTextChanged = (e) => {
@@ -24,20 +22,17 @@ export default class AutoCompleteText extends React.Component{
     renderSuggestions(){
         const { suggestions } = this.state;
         if(suggestions.length === 0){
-            return(
-            <ShowVideo/>
-            );
+            return(null);
         }
+
         return(
-            <ul>
+            <ul className='suggestion'>
                 {suggestions.map((item) => 
                     listvideo.map((element) => 
                         item === element.titre ? 
-                            <li>
-                                <img src={element.src} alt={element.titre}/>
-                            </li>
-                        : ''
-                    )
+                            <li key={element.titre} onClick={() => this.setState({suggestions: []})}>
+                                <img src={element.src} alt={element.titre}/>{element.titre}
+                            </li> : false)
                 )}
             </ul>
         );
@@ -46,8 +41,10 @@ export default class AutoCompleteText extends React.Component{
     render(){
         return(
             <div>
-                <input type="text" onChange={this.onTextChanged} />
-                {this.renderSuggestions()}
+                <div className='AutoCompleteText'> 
+                    <input type='text' placeholder='Search...' onChange={this.onTextChanged} />
+                    {this.renderSuggestions()}
+                </div>
             </div>
         )
     }
