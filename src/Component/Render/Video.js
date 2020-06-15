@@ -33,7 +33,7 @@ export default class Video extends Component{
                         <li onClick={() => this.setState({episode: element.episode})}>
                             <img src={element.src} alt={element.episode}/>
                             <span>Episode {element.episode}</span>
-                        </li> : '' )
+                        </li> : null )
                     }
                 </ul>
             </div>

@@ -7,10 +7,6 @@ body{
     background-color: rgb(30,30,30);
 }
 
-body div{ 
-    text-align: center;
-}
-
 .showVideo{
     background-position: top;
     background-size: contain;
@@ -125,4 +121,57 @@ input {
     margin-bottom: 2%;
     width: 70px;
     height:100px;
+}
+
+@media screen and (min-width: 1200px) {
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .app-component{
+        width:100%;
+    }
+    .AutoCompleteText{
+        width: 20%;
+    }
+
+    .showVideo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+        width:100%;
+    }
+
+    .list-film{
+        height:100%;
+        width:100%;
+    }
+    .filter{
+        padding:2%;
+        display: flex;
+        justify-content: left;
+    }
+    .filter p{
+        margin-left: 2%;
+        margin-right: 0.5%;
+    }
+
+    #date, #genre{
+        outline: none;
+        border:none;
+        color:white;
+        background: none;
+    }
+    #date option, #genre option{
+        background-color: rgb(30, 30, 30);
+    }
+
+    img{
+        height:150px;
+        width:100px;
+    }
 }
