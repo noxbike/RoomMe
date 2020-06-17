@@ -13,8 +13,10 @@ export default class Video extends Component{
         for(let element of episodelist){
             if(element.id === movieId && element.episode === episode){
                 return(element.srcvideo ? 
-                <video controls src={element.srcvideo} width='100%' height='100%'/>
-                : <p>" Prochainement sur la plateforme "</p>);
+                <div><h3>Episode {element.episode}</h3>
+                <video controls src={element.srcvideo} type='video/mp4'  width='900px' height='400px'>
+                </video></div>
+                : <div><h3>Episode {element.episode}</h3><p>" Indisponible pour le moment "</p></div>);
             }
         }
     }

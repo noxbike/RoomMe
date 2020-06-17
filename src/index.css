@@ -1,64 +1,43 @@
 body{
     margin: 0px;
-    padding: 2px;
+    padding: 0px;
+    background-color: rgb(30, 30, 30);
+}
+
+.app-component{
     height: 100vh;
-    text-align: left;
-    color:white;
-    background-color: rgb(30,30,30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .showVideo{
-    background-position: top;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.renderinfo{
-    background-color: rgba(0, 0, 0, 0.658);
-    height:320px;
-    color: white;
-}
-
-.lecteur-video{
-    background-color: rgb(30, 30, 30);
-    margin:30% 0% 0% 0%;
-}
-
-.infovideo{
-    background-size: contain;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    height:93%
-}
-
-.infovideo p, .infovideo h4{
-    text-align: left;
-    padding:2%
+    width: 100%;
 }
 
 .list-film{
-    height:20rem;
+    color: white;
+    height:100%;
     overflow-y: auto;
-    background-color: rgb(30, 30, 30);
+    
 }
 
-.btn-regarder{
-    margin-top: 0%;
-    width:100%;
-    color:white;
-    background-color: rgb(78, 76, 245);
-}
-
-ul{
-    padding: 2%;
+ul{ 
+    margin: 0px;
+    padding-left: 1%;
     list-style: none;
+    width:100%;
     display:flex;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-ul::-webkit-scrollbar, .list-film::-webkit-scrollbar
-{    
-    display: none;
+li{
+    margin-bottom: 6%;
+    display:flex;
+    flex-direction: column;
+    height:10%;
+    margin-right: 1.5%;
 }
 
 img{
@@ -67,23 +46,76 @@ img{
     box-shadow: 2px 4px 8px black;
 }
 
-li{
-    display:flex;
-    flex-direction: column;
-    height:10%;
-    margin-right: 20px;
-}
-
-#movie .infovideo{
+.filter{
+    padding:3%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column-reverse;
+    justify-content: space-around;
 }
 
+.filter .left .categorie{
+    width:50%;
+    heigth:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
-#movie .episode, #movie .infovideo{
-background-color: rgb(30, 30, 30);
- padding-top: 13%;
+.filter .left{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.filter .left .categorie li{
+    border-bottom: 4px solid rgba(0, 0, 0, 0);;
+    height: 100%;
+}
+
+.filter .left .categorie li:hover{
+    border-bottom: 4px solid rgb(0, 38, 255);
+}
+
+.dropdown{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-around;
+    width:50%;
+}
+
+#date option, #genre option, #date, #genre{
+    color:white;
+    border:none;
+    outline:none;
+    background-color: rgb(30, 30, 30);
+}
+
+#movie .episode, #movie .lecteur-video{
+    background-color: rgb(30, 30, 30);
+}
+
+.AutoCompleteText{
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    width: 70%;
+}
+
+.suggestion{
+    position: absolute;
+    box-shadow: 2px 4px 8px black;
+    background-color: rgb(30, 30, 30);
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    width:70%;
+}
+
+.AutoCompleteText li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 input {
@@ -95,83 +127,91 @@ input {
     outline: none;
 }
 
-.AutoCompleteText{
-    margin-right: auto;
-    margin-left: auto;
-    width: 70%;
-}
-
-.AutoCompleteText .suggestion{
-    position: absolute;
-    background-color: rgb(30, 30, 30);
+#movie{
+    width:100%;
     display: flex;
     flex-direction: column;
-    width:249px
+    justify-content: center;
 }
 
-.AutoCompleteText li{
-    padding:4%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.lecteur-video{
+    color:white;
+    height:40%;
+    width:100%;
+    text-align: center;
 }
 
-.AutoCompleteText img{
-    margin-bottom: 2%;
-    width: 70px;
-    height:100px;
+.episode{
+    padding: 10% 10% 0% 50% ;
+    display:flex;
+    overflow-x: auto;
+    flex-wrap: inherit;
+    height: 35%;
 }
+
+.episode li{
+    color: white;
+    margin-right: 5%;
+}
+
+
+
 
 @media screen and (min-width: 1200px) {
-    body{
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .app-component{
-        width:100%;
-    }
-    .AutoCompleteText{
-        width: 20%;
-    }
-
-    .showVideo{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0px;
-        padding: 0px;
+    ul{
+        padding: 0%;
         width:100%;
     }
 
-    .list-film{
-        height:100%;
-        width:100%;
+    li{
+        margin-bottom: 2%;
+        margin-right: 1%;
     }
+
     .filter{
-        padding:2%;
+        margin-left: auto;
+        margin-right: auto;
+        padding:1%;
         display: flex;
-        justify-content: left;
-    }
-    .filter p{
-        margin-left: 2%;
-        margin-right: 0.5%;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
     }
 
-    #date, #genre{
-        outline: none;
-        border:none;
-        color:white;
-        background: none;
-    }
-    #date option, #genre option{
-        background-color: rgb(30, 30, 30);
+    .dropdown{
+        margin-top: 0%;
+        width:35%;
     }
 
-    img{
-        height:150px;
-        width:100px;
+    .AutoCompleteText{
+        width: 100%;
+    }
+
+    .lecteur-video{
+        margin-left: auto;
+        margin-right: auto;
+        width:100%;
+    }
+
+    .lecteur-video div{
+        width: 100%;
+    }
+    .episode{
+        padding: 0% ;
+        display:flex;
+        overflow-x: auto;
+        flex-wrap: inherit;
+        margin-top: 2%;
+    }
+
+    .episode::-webkit-scrollbar {
+        display: none;
+      }
+    
+    
+    .episode li img{
+        height: 130px;
+        width: 100px;
+        box-shadow: 2px 4px 10px black;
     }
 }

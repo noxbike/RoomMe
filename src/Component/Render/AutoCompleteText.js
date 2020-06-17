@@ -1,13 +1,11 @@
 import React from 'react';
 import { titreVideo, listvideo } from '../data/listVideo';
-import FilterVideo from './FilterVideo';
-import Video from './Video';
 
 export default class AutoCompleteText extends React.Component{
     constructor (props){
         super(props);
         this.items= titreVideo;
-        this.state = { suggestions: [], movieId: -1};
+        this.state = { suggestions: [] };
     }
 
     onTextChanged = (e) => {
@@ -21,10 +19,10 @@ export default class AutoCompleteText extends React.Component{
     }
 
     renderSuggestions(){
-        const { suggestions, movieId } = this.state;
+        const { suggestions } = this.state;
         if(suggestions.length === 0){
             return(
-                movieId > 0 ? <Video id={movieId}/> : <FilterVideo/>
+                 null
             );
         }
 

@@ -16,7 +16,7 @@ export default class FilterVideo extends Component{
     return( 
       <div>
         <select value={selectDate} onChange={(e) => this.setState({selectDate: e.target.value})} id="date">
-          <option value='all'>Tout</option>
+          <option value='all'>Date</option>
           {this.date.map((date) =>
             <option key={date} value={date}>{date}</option>
           )}
@@ -30,7 +30,7 @@ export default class FilterVideo extends Component{
     return( 
       <div>
         <select value={selectGenre} onChange={(e) => this.setState({selectGenre: e.target.value})} id="genre">
-          <option value='all'>Tout</option>
+          <option value='all'>Genres</option>
           {this.genre.map((genre) =>
             <option key={genre} value={genre}>{genre}</option>
           )}
