@@ -11,6 +11,16 @@ body{
     align-items: center;
 }
 
+.PopCorn-streaming{
+    width:100%;
+    color:rgb(49, 63, 255);
+    font-family: 'Permanent Marker', cursive;
+    background-color: black;
+    box-shadow: 0px 2px 20px rgb(49, 63, 255);
+    text-align: center;
+    margin-bottom: 2%;
+}
+
 .showVideo{
     width: 100%;
 }
@@ -73,7 +83,7 @@ img{
 }
 
 .filter .left .categorie li:hover{
-    border-bottom: 4px solid rgb(0, 38, 255);
+    border-bottom: 4px solid rgb(49, 63, 255);
 }
 
 .dropdown{

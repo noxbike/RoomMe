@@ -1,35 +1,30 @@
 import React, { Component } from 'react';
-import { listvideo } from '../data/listVideo';
 import AutoCompleteText from './AutoCompleteText';
 
 export default class AffichageVideo extends Component{
     constructor(props){
         super(props);
-        this.state = { videoList: listvideo }
+        this.state = { categorie: 'all',}
     }
 
     conditionTrie = (video) =>{
-
-        if(this.props.date !== 'all' && this.props.genre === 'all'){
-            return(this.props.date === video.date);
-        }
-
-        else if(this.props.date !== 'all' && this.props.genre !== 'all'){
-            return(this.props.genre === video.genre && this.props.date === video.date);
-        }
-
-        else if(this.props.date === 'all' && this.props.genre !== 'all'){
-            return(this.props.genre === video.genre);
-        }
-        return true;
+        let { categorie } = this.state;
+        let categ = categorie !== 'all' ? categorie === video.categorie : true;
+        let date = this.props.date !== 'all' ? this.props.date === video.date : true;
+        let genre = this.props.genre !== 'all' ? this.props.genre === video.genre : true;
+        return (genre && date && categ);
     }
 
     trieFilm = () => {
-        const { videoList } = this.state;
+        let list = [];
+        this.props.videoList.map((video) => this.conditionTrie(video)?
+            list.push(video)
+        :null )
+        this.props.handleChangeList(list);
         return(
-            videoList.map((video) => this.conditionTrie(video) ?
+            list.map((video) => 
                 this.renderFilm(video)
-            : null )
+            )
         );
     }
 
@@ -49,13 +44,12 @@ export default class AffichageVideo extends Component{
                 <div className='filter'>
                     <div className='left'>
                         <ul className='categorie'>
-                            <li>Movies</li>
-                            <li>Séries</li>
-                            <li>Animations</li>
+                            <li onClick={() => this.setState({categorie: 'movie'})}>Movies</li>
+                            <li onClick={() => this.setState({categorie: 'serie'})}>Séries</li>
+                            <li onClick={() => this.setState({categorie: 'animation'})}>Animations</li>
                         </ul>
                         <div className='dropdown'>
-                            {this.props.dropdownDate}
-                            {this.props.dropdownGenre}
+                            {this.props.dropdown}
                         </div>
                     </div>
                     <AutoCompleteText/>
