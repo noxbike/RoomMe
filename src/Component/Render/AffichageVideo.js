@@ -1,61 +1,73 @@
 import React, { Component } from 'react';
 import AutoCompleteText from './AutoCompleteText';
+import Filter from './Filter';
 
 export default class AffichageVideo extends Component{
     constructor(props){
         super(props);
-        this.state = { categorie: 'all',}
+        this.state = { categorie: 'all', selectGenre: 'all', selectDate: 'all'}
     }
 
-    conditionTrie = (video) =>{
-        let { categorie } = this.state;
-        let categ = categorie !== 'all' ? categorie === video.categorie : true;
-        let date = this.props.date !== 'all' ? this.props.date === video.date : true;
-        let genre = this.props.genre !== 'all' ? this.props.genre === video.genre : true;
-        return (genre && date && categ);
+    handleChangeGenreOrDate = (value, selecteur) =>{
+        switch(selecteur){
+            case 'selectDate':
+                this.setState({selectDate: value,})
+            break;
+            case 'selectGenre':
+                this.setState({selectGenre: value,})
+            break;
+            default:
+                this.setState({categorie: value,})
+        }
+    }
+
+    conditionTrie = (video, select) =>{
+        let { categorie, selectGenre, selectDate } = this.state;
+        if(select === 'categorie'){
+            let categ = categorie !== 'all' ? categorie === video.categorie : true;
+            return categ;
+        }
+        let date = selectDate !== 'all' ? selectDate === video.date : true;
+        let genre = selectGenre !== 'all' ? selectGenre === video.genre : true;
+        return (genre && date);
     }
 
     trieFilm = () => {
-        let list = [];
-        this.props.videoList.map((video) => this.conditionTrie(video)?
-            list.push(video)
-        :null )
-        this.props.handleChangeList(list);
+        let tab = [];
+        this.props.videoList.map((video) => this.conditionTrie(video, 'categorie') ?
+            tab.push(video) : null
+        )
+        return(tab);
+    }
+
+    renderFilm = () => {
+        let list = this.trieFilm();
         return(
-            list.map((video) => 
-                this.renderFilm(video)
+            list.map((video) => this.conditionTrie(video, null) ?
+                <li onClick={() => this.props.movieclicked(video.id)} key={video.id}>
+                    <img src={video.src} alt={video.titre}/>
+                    <span className='genre'>{video.genre}</span>
+                    <span className='date'>{video.date}</span>
+                </li> : null
             )
         );
     }
 
-    renderFilm = (video) => {
-        return(
-            <li onClick={() => this.props.movieclicked(video.id)} key={video.id}>
-                <img src={video.src} alt={video.titre}/>
-                <span className='genre'>{video.genre}</span>
-                <span className='date'>{video.date}</span>
-            </li> 
-        );
-    }
-
     render(){
+        let { selectGenre, selectDate } = this.state;
         return(
             <div className='list-film'>
                 <div className='filter'>
-                    <div className='left'>
-                        <ul className='categorie'>
-                            <li onClick={() => this.setState({categorie: 'movie'})}>Movies</li>
-                            <li onClick={() => this.setState({categorie: 'serie'})}>Séries</li>
-                            <li onClick={() => this.setState({categorie: 'animation'})}>Animations</li>
-                        </ul>
-                        <div className='dropdown'>
-                            {this.props.dropdown}
-                        </div>
-                    </div>
+                    <Filter 
+                    selectDate = {selectDate}
+                    selectGenre = {selectGenre}
+                    handleChangeGenreOrDate={this.handleChangeGenreOrDate}
+                    trieFilm = {this.trieFilm()}
+                    />
                     <AutoCompleteText/>
                 </div>
                 <ul>
-                    {this.trieFilm()}
+                    {this.renderFilm()}
                 </ul>
             </div>
         );

@@ -1,17 +1,17 @@
 import batman from '../jacket/batman.jpg';
 
 export const listvideo = [
-    {id: 1, titre: 'Heirs', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg', categorie: 'serie' , genre: 'drama', date: '2020'},
-    {id: 2, titre: 'Hitman', src: 'https://fr.web.img5.acsta.net/r_1280_720/medias/nmedia/18/64/61/90/18920333.jpg', categorie: 'movie', genre: 'action', date: '2015'},
-    {id: 3, titre: 'Moon lover', src: 'https://www.nautiljon.com/images/drama/00/08/moon_lovers_scarlet_heart_ryeo_2080.jpg', categorie: 'serie', genre: 'drama', date: '2020'},
-    {id: 4, titre: 'Fast an Furious', src: 'https://fr.web.img4.acsta.net/pictures/19/06/13/16/39/3685647.jpg', categorie: 'movie', genre: 'action', date: '2056'},
-    {id: 5, titre: 'Punisher', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg', categorie: 'movie', genre: 'action', date: '2071'},
+    {id: 1, titre: 'Heirs', src: 'https://i.skyrock.net/6619/78816619/pics/3205583447_1_10_bEzNeVD2.jpg', categorie: 'Series' , genre: 'drama', date: '2020'},
+    {id: 2, titre: 'Hitman', src: 'https://fr.web.img5.acsta.net/r_1280_720/medias/nmedia/18/64/61/90/18920333.jpg', categorie: 'Movies', genre: 'action', date: '2015'},
+    {id: 3, titre: 'Moon lover', src: 'https://www.nautiljon.com/images/drama/00/08/moon_lovers_scarlet_heart_ryeo_2080.jpg', categorie: 'Series', genre: 'drama', date: '2020'},
+    {id: 4, titre: 'Fast an Furious', src: 'https://fr.web.img4.acsta.net/pictures/19/06/13/16/39/3685647.jpg', categorie: 'Movies', genre: 'action', date: '2056'},
+    {id: 5, titre: 'Punisher', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg', categorie: 'Movies', genre: 'action', date: '2071'},
     {id: 6, titre: 'Batman', src: batman, categorie: 'movie', genre: 'action', date: '2005'},
-    {id: 7, titre: 'The king:Forever soveraign', src: 'https://www.nautiljon.com/images/drama/00/67/the_king_forever_sovereign_3976.jpg', categorie: 'serie', genre: 'Série/drama', date: '2020'},
-    {id: 8, titre: 'Ghost', src: 'https://upload.wikimedia.org/wikipedia/en/7/72/Hey_Ghost%2C_Let%27s_Fight_-_Poster.jpg', categorie: 'serie', genre: 'drama', date: '2020'},
-    {id: 9, titre: 'Jumanji', src: 'https://cdn-s-www.estrepublicain.fr/images/ec8d4371-4cf7-446e-b80b-c6ecc9342c53/BES_06/illustration-jumanji-next-level_1-1577698367.jpg', categorie: 'movie', genre: 'aventure', date: '2019'},
-    {id: 10, titre: 'Seigneur des anneaux', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjRfQVW19158aqB86-YaHm5irpfTffm3NEyvB2dmG0VGCJyWEO&usqp=CAU', categorie: 'movie', genre: 'aventure', date: '2001'},
-    {id: 11, titre: 'Harry Potter', src: 'https://fr.web.img2.acsta.net/pictures/18/07/02/17/25/3643090.jpg', categorie: 'movie', genre: 'Fantastique', date: '2001'}
+    {id: 7, titre: 'The king:Forever soveraign', src: 'https://www.nautiljon.com/images/drama/00/67/the_king_forever_sovereign_3976.jpg', categorie: 'Series', genre: 'Série/drama', date: '2020'},
+    {id: 8, titre: 'Ghost', src: 'https://upload.wikimedia.org/wikipedia/en/7/72/Hey_Ghost%2C_Let%27s_Fight_-_Poster.jpg', categorie: 'Series', genre: 'drama', date: '2020'},
+    {id: 9, titre: 'Jumanji', src: 'https://cdn-s-www.estrepublicain.fr/images/ec8d4371-4cf7-446e-b80b-c6ecc9342c53/BES_06/illustration-jumanji-next-level_1-1577698367.jpg', categorie: 'Movies', genre: 'aventure', date: '2019'},
+    {id: 10, titre: 'Seigneur des anneaux', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjRfQVW19158aqB86-YaHm5irpfTffm3NEyvB2dmG0VGCJyWEO&usqp=CAU', categorie: 'Movies', genre: 'aventure', date: '2001'},
+    {id: 11, titre: 'Harry Potter', src: 'https://fr.web.img2.acsta.net/pictures/18/07/02/17/25/3643090.jpg', categorie: 'Movies', genre: 'Fantastique', date: '2001'}
 ]
 
 export const episodelist = [
