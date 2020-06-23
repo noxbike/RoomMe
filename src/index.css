@@ -206,6 +206,7 @@ input {
     }
 
     #movie{
+        margin-top: 1%;
         padding:0%;
         display: flex;
         flex-direction: row;
@@ -270,5 +271,10 @@ input {
 
     .synopsys div{
         width: 80%;
+    }
+
+    .previous{
+        color: white;
+        margin:1%;
     }
 }

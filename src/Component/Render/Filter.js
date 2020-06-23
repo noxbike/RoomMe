@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const categorie = [ 'Movies', 'Series', 'Animation'];
+const categorie = [ 'Movies', 'Series', 'Animation' ];
 
 export default class Filter extends Component{
     dropdownRender = () => {
@@ -11,10 +11,10 @@ export default class Filter extends Component{
         return (
           dropdown.map((element) =>
           <div>
-            <select value={element.selected} onChange={(e) => this.props.handleChangeState(e.target.value, element.select)} id={element.id}>
-              <option value='all'>{element.id}</option>
-              {element.storage.map((store) =>
-                <option key={store} value={store}>{store}</option>
+            <select value={ element.selected } onChange={ (e) => this.props.handleChangeState(e.target.value, element.select) } id={ element.id }>
+              <option value='all'>{ element.id }</option>
+              { element.storage.map((store) =>
+                <option key={ store } value={ store }>{ store }</option>
               )}
             </select>
           </div>
@@ -23,15 +23,14 @@ export default class Filter extends Component{
 
     trie = (object) => {
         let result = [];
-        let input = this.props.trieFilm;
-        input.map((element) => result.push(element[object]))
+        this.props.trieByCategorie.map((element) => result.push(element[object]))
         return Array.from(new Set(result));
     }
 
     categorieRender = () => {
         return(
             categorie.map((element) => 
-            <li onClick={() => this.props.handleChangeState(element, 'categorie')}>{element}</li>)
+            <li onClick={ () => this.props.handleChangeState(element, 'categorie') }>{ element }</li>)
         );
     }
       
@@ -39,10 +38,10 @@ export default class Filter extends Component{
         return(
             <div className='left'>
                 <ul className='categorie'>
-                    {this.categorieRender()}
+                    { this.categorieRender() }
                 </ul>
                 <div className='dropdown'>
-                    {this.dropdownRender()}
+                    { this.dropdownRender() }
                 </div>
             </div>
         );

@@ -11,13 +11,13 @@ export default class AffichageVideo extends Component{
     handleChangeState = (value, selecteur) =>{
         switch(selecteur){
             case 'selectDate':
-                this.setState({selectDate: value,})
+                this.setState({ selectDate: value })
             break;
             case 'selectGenre':
-                this.setState({selectGenre: value,})
+                this.setState({ selectGenre: value })
             break;
             default:
-                this.setState({categorie: value,})
+                this.setState({ categorie: value })
         }
     }
 
@@ -27,12 +27,12 @@ export default class AffichageVideo extends Component{
             let categ = categorie !== 'all' ? categorie === video.categorie : true;
             return categ;
         }
-        let date = selectDate !== 'all' ? selectDate === video.date : true;
+        let date  = selectDate  !== 'all' ? selectDate  === video.date  : true;
         let genre = selectGenre !== 'all' ? selectGenre === video.genre : true;
-        return (genre && date);
+        return ( genre && date );
     }
 
-    trieFilm = () => {
+    trieByCategorie = () => {
         let tab = [];
         this.props.videoList.map((video) => this.conditionTrie(video, 'categorie') ?
             tab.push(video) : null
@@ -41,13 +41,13 @@ export default class AffichageVideo extends Component{
     }
 
     renderFilm = () => {
-        let list = this.trieFilm();
+        let list = this.trieByCategorie();
         return(
             list.map((video) => this.conditionTrie(video, null) ?
-                <li onClick={() => this.props.movieclicked(video.id)} key={video.id}>
-                    <img src={video.src} alt={video.titre}/>
-                    <span className='genre'>{video.genre}</span>
-                    <span className='date'>{video.date}</span>
+                <li onClick={ () => this.props.movieclicked(video.id) } key={ video.id }>
+                    <img src={ video.src } alt={ video.titre }/>
+                    <span className='genre'>{ video.genre }</span>
+                    <span className='date'>{ video.date }</span>
                 </li> : null
             )
         );
@@ -59,15 +59,18 @@ export default class AffichageVideo extends Component{
             <div className='list-film'>
                 <div className='filter'>
                     <Filter 
-                    selectDate        = {selectDate}
-                    selectGenre       = {selectGenre}
-                    handleChangeState = {this.handleChangeState}
-                    trieFilm          = {this.trieFilm()}
+                    selectDate        = { selectDate }
+                    selectGenre       = { selectGenre }
+                    handleChangeState = { this.handleChangeState }
+                    trieByCategorie   = { this.trieByCategorie() }
                     />
-                    <AutoCompleteText movieclicked={this.props.movieclicked}/>
+                    <AutoCompleteText
+                    videoList    = { this.props.videoList }
+                    movieclicked = { this.props.movieclicked }
+                    />
                 </div>
                 <ul>
-                    {this.renderFilm()}
+                    { this.renderFilm() }
                 </ul>
             </div>
         );

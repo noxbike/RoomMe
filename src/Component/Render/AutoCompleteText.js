@@ -1,11 +1,19 @@
 import React from 'react';
-import { titreVideo, listvideo } from '../data/listVideo';
 
 export default class AutoCompleteText extends React.Component{
     constructor (props){
         super(props);
-        this.items = titreVideo;
-        this.state = { suggestions: [] };
+        this.items     = this.titreVideo();
+        this.videoList = this.props.videoList;
+        this.state     = { suggestions: [] };
+    }
+
+    titreVideo = () => {
+        let tab = [];
+        this.props.videoList.map((video) => 
+            tab.push(video.titre)
+        )
+        return(tab);
     }
 
     onTextChanged = (e) => {
@@ -15,7 +23,7 @@ export default class AutoCompleteText extends React.Component{
             const regex = new RegExp(`^${value}`, 'i');
             suggestions = this.items.sort().filter(v => regex.test(v));
         }
-        this.setState(() => ({suggestions}));
+        this.setState(() => ({ suggestions }));
     }
 
     renderSuggestions(){
@@ -25,15 +33,17 @@ export default class AutoCompleteText extends React.Component{
         }
         return(
             <ul className='suggestion'>
-                {suggestions.map((item) => 
-                    listvideo.map((element) => 
-                        item === element.titre ? 
-                            <li key={element.titre} onClick={() => this.props.movieclicked(element.id)}>
-                                <img src={element.src} alt={element.titre}/>
-                                <div>
-                                    <p className='titre'>{element.titre}</p>
-                                </div>
-                            </li> : null
+                {
+                    suggestions.map((item) => 
+                        this.videoList.map((element) => 
+                            item === element.titre ? 
+                                <li key={ element.titre } onClick={ () => this.props.movieclicked(element.id) }>
+                                    <img src={ element.src } alt={ element.titre }/>
+                                    <div>
+                                        <p className='titre'>{ element.titre }</p>
+                                    </div>
+                                </li> 
+                            : null
                         )
                     )
                 }
@@ -47,7 +57,7 @@ export default class AutoCompleteText extends React.Component{
                 <div className='AutoCompleteText'> 
                     <input type='text' placeholder='Search...' onChange={this.onTextChanged} />
                 </div>
-                {this.renderSuggestions()}
+                { this.renderSuggestions() }
             </div>
         )
     }

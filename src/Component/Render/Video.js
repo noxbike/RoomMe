@@ -12,7 +12,8 @@ export default class Video extends Component{
     selectEpisode = () =>{
         const { movieId, episode } = this.state;
         for(let element of episodelist){
-            if(element.id === movieId && element.episode === episode){
+            let condition = typeof element.episode !== 'number' && typeof episode !== 'string' ? element.episode : episode;
+            if(element.id === movieId && element.episode === condition){
                 return(element.srcvideo ? 
                 <div>
                     <video controls src={element.srcvideo} type='video/mp4'  width='70%' height='70%'>
@@ -57,8 +58,8 @@ export default class Video extends Component{
                             {
                                 episodelist.map((element) => 
                                 element.id === movieId ? 
-                                <li onClick={() => this.setState({episode: element.episode})}>
-                                    <a href='#'>Episode {element.episode}</a>
+                                <li onClick={ () => this.setState({episode: element.episode}) }>
+                                    <a href='#'>{ typeof element.episode === 'number' ? `Episode ${element.episode}` : element.episode }</a>
                                 </li> : null )
                             }
                         </ul>
