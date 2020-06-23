@@ -100,10 +100,6 @@ img{
     background-color: rgb(30, 30, 30);
 }
 
-#movie .episode, #movie .lecteur-video{
-    background-color: rgb(30, 30, 30);
-}
-
 .AutoCompleteText{
     margin-right: auto;
     margin-left: auto;
@@ -117,15 +113,20 @@ img{
     background-color: rgb(30, 30, 30);
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
-    width:70%;
+    width:15%;
 }
 
-.AutoCompleteText li{
+.suggestion li{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    padding:2%
+}
+
+.suggestion img{
+    margin-right: 6%;
+    width:30%;
+    height:60%;
 }
 
 input {
@@ -154,7 +155,6 @@ input {
 .episode{
     padding: 10% 10% 0% 50% ;
     display:flex;
-    overflow-x: auto;
     flex-wrap: inherit;
     height: 35%;
 }
@@ -200,28 +200,75 @@ input {
     .lecteur-video{
         margin-left: auto;
         margin-right: auto;
-        width:100%;
+        background-color: black;
+        width:90%;
+        height: 100%;
+    }
+
+    #movie{
+        padding:0%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
     }
 
     .lecteur-video div{
+        height: 100%;
         width: 100%;
     }
     .episode{
-        padding: 0% ;
-        display:flex;
-        overflow-x: auto;
-        flex-wrap: inherit;
-        margin-top: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 0%;
+        margin:0% 2% 0% 2%;
+        width: 20%;
     }
 
-    .episode::-webkit-scrollbar {
-        display: none;
-      }
-    
-    
-    .episode li img{
-        height: 130px;
-        width: 100px;
-        box-shadow: 2px 4px 10px black;
+    .episode ul{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .episode ul li a {
+        text-decoration: none;
+        color: rgb(187, 187, 187);
+    }
+
+    .episode ul li{
+        padding:0%;
+        margin: 0%;
+    }
+    .episode ul li:hover, .episode ul li a:hover{
+        color:white;
+        background-color: rgb(16, 17, 20);
+       
+    }
+
+    .episode ul li:first-child{
+        height: 30px;
+        width: 100%;
+        background-color: rgb(16, 17, 20);
+    }
+
+    .titreFilmSelected{
+        color: white;
+        padding-left:2%;
+    }
+
+    .synopsys{
+        color:white;
+        display: flex;
+        flex-direction: row;
+        width:70%;
+        justify-content: space-around;
+        padding:1%;
+    }
+
+    .synopsys div{
+        width: 80%;
     }
 }

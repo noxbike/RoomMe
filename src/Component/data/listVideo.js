@@ -7,10 +7,10 @@ export const listvideo = [
     {id: 4, titre: 'Fast an Furious', src: 'https://fr.web.img4.acsta.net/pictures/19/06/13/16/39/3685647.jpg', categorie: 'Movies', genre: 'action', date: '2056'},
     {id: 5, titre: 'Punisher', src: 'https://fr.web.img4.acsta.net/pictures/17/07/18/12/32/313669.jpg', categorie: 'Movies', genre: 'action', date: '2071'},
     {id: 6, titre: 'Batman', src: batman, categorie: 'movie', genre: 'action', date: '2005'},
-    {id: 7, titre: 'The king:Forever soveraign', src: 'https://www.nautiljon.com/images/drama/00/67/the_king_forever_sovereign_3976.jpg', categorie: 'Series', genre: 'Série/drama', date: '2020'},
+    {id: 7, titre: 'The king : Forever soveraign', src: 'https://www.nautiljon.com/images/drama/00/67/the_king_forever_sovereign_3976.jpg', categorie: 'Series', genre: 'Série/drama', date: '2020', synopsys: 'Un démon est libéré dans le monde humain et ouvrira bientôt une porte dans un monde parallèle. Face à lui se dresse l empereur coréen Lee Gon, accompagné de la détective sud-coréenne Jeong Tae Eul qui tente de protéger la vie des gens et de la personne qu elle aime.'},
     {id: 8, titre: 'Ghost', src: 'https://upload.wikimedia.org/wikipedia/en/7/72/Hey_Ghost%2C_Let%27s_Fight_-_Poster.jpg', categorie: 'Series', genre: 'drama', date: '2020'},
     {id: 9, titre: 'Jumanji', src: 'https://cdn-s-www.estrepublicain.fr/images/ec8d4371-4cf7-446e-b80b-c6ecc9342c53/BES_06/illustration-jumanji-next-level_1-1577698367.jpg', categorie: 'Movies', genre: 'aventure', date: '2019'},
-    {id: 10, titre: 'Seigneur des anneaux', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjRfQVW19158aqB86-YaHm5irpfTffm3NEyvB2dmG0VGCJyWEO&usqp=CAU', categorie: 'Movies', genre: 'aventure', date: '2001'},
+    {id: 10, titre: 'Seigneur des anneaux', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjRfQVW19158aqB86-YaHm5irpfTffm3NEyvB2dmG0VGCJyWEO&usqp=CAU', categorie: 'Movies', genre: 'aventure', date: '2001', synopsys: 'Un jeune et timide  Hobbit , Frodon Sacquet, hérite d un anneau magique. Bien loin d être une simple babiole, il s agit d un instrument de pouvoir absolu qui permettrait à Sauron, le  Seigneur des ténèbres , de régner sur la Terre du Milieu et de réduire en esclavage ses peuples. Frodon doit parvenir jusqu à la Crevasse du Destin pour détruire l anneau.'},
     {id: 11, titre: 'Harry Potter', src: 'https://fr.web.img2.acsta.net/pictures/18/07/02/17/25/3643090.jpg', categorie: 'Movies', genre: 'Fantastique', date: '2001'}
 ]
 

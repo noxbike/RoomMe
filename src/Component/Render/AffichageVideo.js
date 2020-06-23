@@ -8,7 +8,7 @@ export default class AffichageVideo extends Component{
         this.state = { categorie: 'all', selectGenre: 'all', selectDate: 'all'}
     }
 
-    handleChangeGenreOrDate = (value, selecteur) =>{
+    handleChangeState = (value, selecteur) =>{
         switch(selecteur){
             case 'selectDate':
                 this.setState({selectDate: value,})
@@ -59,12 +59,12 @@ export default class AffichageVideo extends Component{
             <div className='list-film'>
                 <div className='filter'>
                     <Filter 
-                    selectDate = {selectDate}
-                    selectGenre = {selectGenre}
-                    handleChangeGenreOrDate={this.handleChangeGenreOrDate}
-                    trieFilm = {this.trieFilm()}
+                    selectDate        = {selectDate}
+                    selectGenre       = {selectGenre}
+                    handleChangeState = {this.handleChangeState}
+                    trieFilm          = {this.trieFilm()}
                     />
-                    <AutoCompleteText/>
+                    <AutoCompleteText movieclicked={this.props.movieclicked}/>
                 </div>
                 <ul>
                     {this.renderFilm()}

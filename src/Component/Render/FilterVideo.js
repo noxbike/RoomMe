@@ -17,7 +17,7 @@ export default class FilterVideo extends Component{
     let { movieId } = this.state;
     if(movieId > 0){
       return(
-        <Video id={movieId}/>
+        <Video id={movieId} listvideo={listvideo}/>
       );
     }
     return(

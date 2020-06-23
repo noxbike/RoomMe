@@ -11,7 +11,7 @@ export default class Filter extends Component{
         return (
           dropdown.map((element) =>
           <div>
-            <select value={element.selected} onChange={(e) => this.props.handleChangeGenreOrDate(e.target.value, element.select)} id={element.id}>
+            <select value={element.selected} onChange={(e) => this.props.handleChangeState(e.target.value, element.select)} id={element.id}>
               <option value='all'>{element.id}</option>
               {element.storage.map((store) =>
                 <option key={store} value={store}>{store}</option>
@@ -25,14 +25,13 @@ export default class Filter extends Component{
         let result = [];
         let input = this.props.trieFilm;
         input.map((element) => result.push(element[object]))
-        result = Array.from(new Set(result));
-        return result;
+        return Array.from(new Set(result));
     }
 
     categorieRender = () => {
         return(
             categorie.map((element) => 
-            <li onClick={() => this.props.handleChangeGenreOrDate(element, 'categorie')}>{element}</li>)
+            <li onClick={() => this.props.handleChangeState(element, 'categorie')}>{element}</li>)
         );
     }
       

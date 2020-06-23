@@ -4,7 +4,7 @@ import { titreVideo, listvideo } from '../data/listVideo';
 export default class AutoCompleteText extends React.Component{
     constructor (props){
         super(props);
-        this.items= titreVideo;
+        this.items = titreVideo;
         this.state = { suggestions: [] };
     }
 
@@ -21,21 +21,22 @@ export default class AutoCompleteText extends React.Component{
     renderSuggestions(){
         const { suggestions } = this.state;
         if(suggestions.length === 0){
-            return(
-                 null
-            );
+            return( null );
         }
-
         return(
             <ul className='suggestion'>
                 {suggestions.map((item) => 
                     listvideo.map((element) => 
                         item === element.titre ? 
-                            <li key={element.titre} onClick={() => this.setState({suggestions: [], movieId: element.id})}>
+                            <li key={element.titre} onClick={() => this.props.movieclicked(element.id)}>
                                 <img src={element.src} alt={element.titre}/>
-                                <span className='titre'>{element.titre}</span>
-                            </li> : null)
-                )}
+                                <div>
+                                    <p className='titre'>{element.titre}</p>
+                                </div>
+                            </li> : null
+                        )
+                    )
+                }
             </ul>
         );
     }
