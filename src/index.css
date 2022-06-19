@@ -4,6 +4,22 @@ body{
     background-color: rgb(30, 30, 30);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: rgb(30, 30, 30); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 .app-component{
     height: 100vh;
     display: flex;
@@ -12,8 +28,8 @@ body{
 }
 
 .PopCorn-streaming{
-    width:100%;
-    color:rgb(49, 63, 255);
+    width: 100%;
+    color: rgb(49, 63, 255);
     font-family: 'Permanent Marker', cursive;
     background-color: black;
     box-shadow: 0px 2px 20px rgb(49, 63, 255);
@@ -21,260 +37,85 @@ body{
     margin-bottom: 2%;
 }
 
+.listVideo{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .showVideo{
     width: 100%;
-}
-
-.list-film{
-    color: white;
-    height:100%;
-    overflow-y: auto;
-    
-}
-
-ul{ 
-    margin: 0px;
-    padding-left: 1%;
-    list-style: none;
-    width:100%;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
-li{
-    margin-bottom: 6%;
-    display:flex;
-    flex-direction: column;
-    height:10%;
-    margin-right: 1.5%;
+h3{
+    color: white;
 }
 
 img{
-    height:140px;
-    width:100px;
+    cursor: pointer;
+    height: 260px;
+    width: 180px;
+    margin: 15px;
     box-shadow: 2px 4px 8px black;
 }
 
 .filter{
-    padding:3%;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: space-around;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.filter .left .categorie{
-    width:50%;
-    height:100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.autoComplete{
+    width: 300px;
+    margin-left: auto;
 }
 
-.filter .left{
-    display: flex;
-    flex-direction: row;
-    width: 50%;
+#AffichageVideo{
+    color: white;
 }
 
-.filter .left .categorie li{
-    border-bottom: 4px solid rgba(0, 0, 0, 0);;
-    height: 100%;
-}
-
-.filter .left .categorie li:hover{
-    border-bottom: 4px solid rgb(49, 63, 255);
-}
-
-.dropdown{
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-around;
-    width:50%;
-}
-
-#date option, #genre option, #date, #genre{
-    color:white;
-    border:none;
-    outline:none;
-    background-color: rgb(30, 30, 30);
-}
-
-.AutoCompleteText{
+.containerView, .synopsisView{
+    width: 70%;
     margin-right: auto;
     margin-left: auto;
     display: flex;
-    width: 70%;
-}
-
-.suggestion{
-    position: absolute;
-    box-shadow: 2px 4px 8px black;
-    background-color: rgb(30, 30, 30);
-    display: flex;
-    flex-direction: column;
-    width:15%;
-}
-
-.suggestion li{
-    display: flex;
     flex-direction: row;
-    align-items: center;
-    padding:2%
+    align-items: stretch;
+    margin-top: 20px;
 }
 
-.suggestion img{
-    margin-right: 6%;
-    width:30%;
-    height:60%;
+.infoView{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 input {
     background-color: rgb(30, 30, 30);
     border: none;
-    color:white;
+    color: white;
     border-bottom: 2px solid rgba(128, 128, 128, 0.342);
-    width:100%;
+    width: 100%;
     outline: none;
 }
 
-#movie{
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.lecteur-video{
-    color:white;
-    height:40%;
-    width:100%;
-    text-align: center;
-}
-
-.episode{
-    padding: 10% 10% 0% 50% ;
-    display:flex;
-    flex-wrap: inherit;
-    height: 35%;
-}
-
-.episode li{
+.synopsys{
+    padding: 2%;
     color: white;
-    margin-right: 5%;
 }
-
-
-
 
 @media screen and (min-width: 1200px) {
-    ul{
-        padding: 0%;
-        width:100%;
-    }
-
-    li{
-        margin-bottom: 2%;
-        margin-right: 1%;
-    }
-
-    .filter{
-        margin-left: auto;
-        margin-right: auto;
-        padding:1%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 90%;
-    }
-
-    .dropdown{
-        margin-top: 0%;
-        width:35%;
-    }
-
-    .AutoCompleteText{
-        width: 100%;
-    }
-
-    .lecteur-video{
-        margin-left: auto;
-        margin-right: auto;
-        background-color: black;
-        width:90%;
-        height: 100%;
-    }
-
-    #movie{
-        margin-top: 1%;
-        padding:0%;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-around;
-    }
-
-    .lecteur-video div{
-        height: 100%;
-        width: 100%;
-    }
-    .episode{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding: 0%;
-        margin:0% 2% 0% 2%;
-        width: 20%;
-    }
-
-    .episode ul{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    .episode ul li a {
-        text-decoration: none;
-        color: rgb(187, 187, 187);
-    }
-
-    .episode ul li{
-        padding:0%;
-        margin: 0%;
-    }
-    .episode ul li:hover, .episode ul li a:hover{
-        color:white;
-        background-color: rgb(16, 17, 20);
-       
-    }
-
-    .episode ul li:first-child{
-        height: 30px;
-        width: 100%;
-        background-color: rgb(16, 17, 20);
-    }
-
-    .titreFilmSelected{
-        color: white;
-        padding-left:2%;
-    }
 
     .synopsys{
-        color:white;
         display: flex;
         flex-direction: row;
-        width:70%;
+        width: 70%;
         justify-content: space-around;
-        padding:1%;
     }
 
     .synopsys div{
         width: 80%;
-    }
-
-    .previous{
-        color: white;
-        margin:1%;
     }
 }

@@ -1,78 +1,40 @@
-import React, { Component } from 'react';
-import AutoCompleteText from './AutoCompleteText';
-import Filter from './Filter';
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { getOneVideo } from '../../feature/autocomplete/dataSlice'
 
-export default class AffichageVideo extends Component{
-    constructor(props){
-        super(props);
-        this.state = { categorie: 'all', selectGenre: 'all', selectDate: 'all'}
-    }
 
-    handleChangeState = (value, selecteur) =>{
-        switch(selecteur){
-            case 'selectDate':
-                this.setState({ selectDate: value })
-            break;
-            case 'selectGenre':
-                this.setState({ selectGenre: value })
-            break;
-            default:
-                this.setState({ categorie: value })
-        }
-    }
+function AffichageVideo() {
+    const video = useSelector(state => state.data.one)
+    const params = useParams();
+    const dispatch = useDispatch();
 
-    conditionTrie = (video, select) =>{
-        let { categorie, selectGenre, selectDate } = this.state;
-        if(select === 'categorie'){
-            let categ = categorie !== 'all' ? categorie === video.categorie : true;
-            return categ;
-        }
-        let date  = selectDate  !== 'all' ? selectDate  === video.date  : true;
-        let genre = selectGenre !== 'all' ? selectGenre === video.genre : true;
-        return ( genre && date );
-    }
+    useEffect(() => {
+        dispatch(getOneVideo(params.id))
+    },[dispatch, params])
 
-    trieByCategorie = () => {
-        let tab = [];
-        this.props.videoList.map((video) => this.conditionTrie(video, 'categorie') ?
-            tab.push(video) : null
-        )
-        return(tab);
-    }
-
-    renderFilm = () => {
-        let list = this.trieByCategorie();
-        return(
-            list.map((video) => this.conditionTrie(video, null) ?
-                <li onClick={ () => this.props.movieclicked(video.id) } key={ video.id }>
-                    <img src={ video.src } alt={ video.titre }/>
-                    <span className='genre'>{ video.genre }</span>
-                    <span className='date'>{ video.date }</span>
-                </li> : null
-            )
-        );
-    }
-
-    render(){
-        let { selectGenre, selectDate } = this.state;
-        return(
-            <div className='list-film'>
-                <div className='filter'>
-                    <Filter 
-                    selectDate        = { selectDate }
-                    selectGenre       = { selectGenre }
-                    handleChangeState = { this.handleChangeState }
-                    trieByCategorie   = { this.trieByCategorie() }
-                    />
-                    <AutoCompleteText
-                    videoList    = { this.props.videoList }
-                    movieclicked = { this.props.movieclicked }
-                    />
+  return (
+    <div id='AffichageVideo'> 
+        { video && 
+        <div>
+            <div className='containerView'>
+                <div className='jacketView'>
+                    <img src={video.image} alt={video.title}/>
                 </div>
-                <ul>
-                    { this.renderFilm() }
-                </ul>
+                <div className='infoView'>
+                    <h3>{video.title}</h3>
+                    {video.episodes && <p>{video.episodes} episode{video.episodes > 1 && 's'}</p>}
+                    <p>{video.genres.map(genre => <span>{genre} </span>)}</p>
+                </div>
             </div>
-        );
-    }
+            <div className='synopsisView'>
+                <p>{video.synopsis}</p>
+            </div>
+        </div>}
+    </div>
+  )
 }
+
+export default AffichageVideo
+
+/* */
