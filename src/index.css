@@ -106,6 +106,25 @@ input {
     color: white;
 }
 
+#pagination{
+    color:white;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#pagination p{
+    text-align: center;
+}
+
+.activepage{
+    color: rgb(49, 63, 255);
+}
+
+#pagination span{
+    cursor: pointer;
+    padding: 10px;
+}
+
 @media screen and (min-width: 1200px) {
 
     .synopsys{

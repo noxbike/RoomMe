@@ -1,10 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux/es/exports';
+import React, {useEffect} from 'react';
+import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { Link } from 'react-router-dom';
+import { getAllVideo } from '../../feature/autocomplete/dataSlice'
+import Pagination from './Pagination';
 
 function ListeVideo() {
   const items = useSelector((state) => state.data.value)
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getAllVideo())
+  },[dispatch])
+  
   return (
     <div className='listVideo'>
       {console.log(items)}
@@ -16,6 +23,7 @@ function ListeVideo() {
         }
         {items < 1 && <div className='showVideo'><h3>Anime not found!</h3></div>}
       </div>
+     <Pagination/>
     </div>
   )
 }
