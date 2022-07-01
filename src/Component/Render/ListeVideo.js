@@ -14,7 +14,6 @@ function ListeVideo() {
   
   return (
     <div className='listVideo'>
-      {console.log(items)}
       <div className='showVideo'>
         {items && items.map((video) =>
           <Link to={`/${video._id}`} key={video._id}>

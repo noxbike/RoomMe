@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux/es/exports'
-import { page } from '../../feature/autocomplete/dataSlice'
+import { getAllVideo } from '../../feature/autocomplete/dataSlice'
 
 function Pagination() {
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ function Pagination() {
             tab.push(i)
         }
         return (
-            tab.map(num => <span className={`maximum ${activePage === num && 'activepage'}`} onClick={() => dispatch(page(num))}>{num}</span> )
+            tab.map((num, index) => <span key={index} className={`maximum ${activePage === num && 'activepage'}`} onClick={() => dispatch(getAllVideo(num))}>{num}</span> )
         )
     }
     return (

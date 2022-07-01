@@ -46,6 +46,7 @@ body{
 .showVideo{
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -57,7 +58,7 @@ img{
     cursor: pointer;
     height: 260px;
     width: 180px;
-    margin: 15px;
+    margin: 0.5rem;
     box-shadow: 2px 4px 8px black;
 }
 

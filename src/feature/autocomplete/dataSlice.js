@@ -13,41 +13,42 @@ export const dataSlice = createSlice({
     name: 'data',
     initialState,
     reducers:{
-        page:(state, action) =>{
-            state.page = action.payload
-            state.value = pagination(data, action.payload)
-        },
-        getAllVideo:(state) =>{
+        getAllVideo:(state, action) =>{
+            state.page = action.payload ? action.payload : 1;
             state.value = pagination(data, state.page)
         },
         input: (state, action) => {
-            let title = [];
-            for(let item in data){
-                title.push(data[item].title);
+            const test = (reg, obj) => {
+                let result = reg.test(obj.title)
+                if (!result) {
+                    let genres = obj.genres;
+                    for(let value in genres){
+                        if(reg.test(genres[value])){
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                return result
             }
+
             if(action.payload){
             const regex = new RegExp(`^${action.payload}`, 'i');
-            suggestions = title.sort().filter(v => regex.test(v));
+            suggestions = data.sort((a,b) => a.title < b.title ? -1 : 1).filter(v => test(regex, v));
             }
-            let movieTrie = [];
-            suggestions.map(title =>
-               data.map(video => video.title === title &&
-                   movieTrie.push(video)
-                )
-            )
-            
-            state.value = action.payload.length ? movieTrie : pagination(data, state.page);
+
+            state.value = action.payload ? suggestions : pagination(data, state.page);
         },
         getOneVideo: (state, action) =>{
             for(let value in data){
-                if(action.payload ===data[value]._id){
-                   state.one = data[value]
+                if(action.payload === data[value]._id){ 
+                    state.one = data[value]
                 }
             }
         }
     }
 })
 
-export const { input, getOneVideo, getAllVideo, page } = dataSlice.actions
+export const { input, getOneVideo, getAllVideo } = dataSlice.actions
 
 export default dataSlice.reducer

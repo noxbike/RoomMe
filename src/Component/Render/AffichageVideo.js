@@ -36,5 +36,3 @@ function AffichageVideo() {
 }
 
 export default AffichageVideo
-
-/* */
