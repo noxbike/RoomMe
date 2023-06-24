@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux/es/exports'
+import { useSelector, useDispatch } from 'react-redux'
 import { getAllVideo } from '../../feature/autocomplete/dataSlice'
 
 function Pagination() {

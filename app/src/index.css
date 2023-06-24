@@ -1,0 +1,149 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(30, 30, 30);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+    background: rgb(30, 30, 30); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.app-component{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PopCorn-streaming{
+    width: 100%;
+    color: rgb(49, 63, 255);
+    font-family: 'Permanent Marker', cursive;
+    background-color: black;
+    box-shadow: 0px 2px 20px rgb(49, 63, 255);
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.listVideo{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.showVideo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h3{
+    color: white;
+}
+
+img{
+    cursor: pointer;
+    height: 260px;
+    width: 180px;
+    margin: 0.5rem;
+    box-shadow: 2px 4px 8px black;
+}
+
+.filter{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.autoComplete{
+    width: 300px;
+    margin-left: auto;
+}
+
+#AffichageVideo{
+    color: white;
+}
+
+.containerView, .synopsisView{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.infoView{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+input {
+    background-color: rgb(30, 30, 30);
+    border: none;
+    color: white;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.342);
+    width: 100%;
+    outline: none;
+}
+
+.synopsys{
+    padding: 2%;
+    color: white;
+}
+
+#pagination{
+    color:white;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#pagination p{
+    text-align: center;
+}
+
+.activepage{
+    color: rgb(49, 63, 255);
+}
+
+#pagination span{
+    cursor: pointer;
+    padding: 10px;
+}
+
+.footer{
+    color:white;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    font-size: 12px;
+}
+
+@media screen and (min-width: 1200px) {
+
+    .synopsys{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        justify-content: space-around;
+    }
+
+    .synopsys div{
+        width: 80%;
+    }
+}

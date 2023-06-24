@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getAllVideo } from '../../feature/autocomplete/dataSlice'
 import Pagination from './Pagination';
