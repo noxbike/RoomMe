@@ -1,11 +1,11 @@
 version: '3.9'
 services:
-  room-me:
-    container_name: roomme
-    build: ./app
-    ports:
-      - "3000:3000"
-    volumes:
-      - "app/node_modules"
-      - "./app:/app"
-    
+    react:
+      container_name: roomme
+      build: ./app
+      ports:
+        - "3000:3000"
+      volumes:
+        - /app/node_modules
+        - ./app:/app
+      stdin_open: true

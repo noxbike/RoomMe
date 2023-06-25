@@ -1,30 +1,32 @@
-import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllVideo } from '../../feature/autocomplete/dataSlice'
+import { pagination } from '../../feature/autocomplete/paginationFunction';
+import { useSelector } from 'react-redux';
 import Pagination from './Pagination';
 
-function ListeVideo() {
-  const items = useSelector((state) => state.data.value)
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllVideo())
-  },[dispatch])
-  
-  return (
-    <div className='listVideo'>
-      <div className='showVideo'>
-        {items && items.map((video) =>
-          <Link to={`/${video._id}`} key={video._id}>
-            <img src={video.image} alt={video.title}/>
-          </Link>)
-        }
-        {items < 1 && <div className='showVideo'><h3>Anime not found!</h3></div>}
-      </div>
-     <Pagination/>
-    </div>
-  )
+export default function ListeVideo() {
+	const [sliceData, setSliceData] = useState([])
+  	const data = useSelector(state => state.data.value)
+	const activePage = useSelector(state => state.data.page)
+	
+	useEffect(() => {
+		setSliceData(pagination(data, activePage));
+	},[data,activePage])
+	return (
+		<div className='listVideo'>
+			<div className='showVideo'>
+					{ sliceData && sliceData.map((anime, index) =>
+						<Link to={ `/${ anime._id }` } key={ index }>
+							<img src={ anime.image } alt={ anime.title }/>
+						</Link>)
+					}
+					{ sliceData < 1 && 
+						<div className='showVideo'>
+							<h3>Anime not found!</h3>
+						</div>
+					}
+			</div>
+			<Pagination/>
+		</div>
+	)
 }
-
-export default ListeVideo

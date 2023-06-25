@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getAllVideo } from '../../feature/autocomplete/dataSlice'
+import { changePage } from '../../feature/autocomplete/dataSlice'
+import { numberTotalOfPage } from '../../feature/autocomplete/paginationFunction'
 
 function Pagination() {
     const dispatch = useDispatch();
     const activePage = useSelector(state => state.data.page)
-    const totalPage= useSelector(state => state.data.totalPage)
+    const data = useSelector(state => state.data.value)
+    const totalPage = numberTotalOfPage(data, activePage)
 
     const render = () => {
         let tab=[];
@@ -13,12 +15,20 @@ function Pagination() {
             tab.push(i)
         }
         return (
-            tab.map((num, index) => <span key={index} className={`maximum ${activePage === num && 'activepage'}`} onClick={() => dispatch(getAllVideo(num))}>{num}</span> )
+            tab.map((numberPage, index) => 
+                <span 
+                    key={ index } 
+                    className={ `maximum ${ activePage === numberPage && 'activepage' }` } 
+                    onClick={ () => dispatch(changePage(numberPage)) }
+                >
+                    { numberPage }
+                </span>
+            )
         )
     }
     return (
         <div id='pagination'>
-            <p>{render()}</p>
+            <p>{ render() }</p>
         </div>
     )
 }

@@ -1,38 +1,42 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { getOneData } from '../../feature/autocomplete/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { getOneVideo } from '../../feature/autocomplete/dataSlice'
 
 
-function AffichageVideo() {
-    const video = useSelector(state => state.data.one)
+function AffichageanimeInfo() {
     const params = useParams();
     const dispatch = useDispatch();
+    const animeInfo = useSelector(state => state.data.one)
 
     useEffect(() => {
-        dispatch(getOneVideo(params.id))
+        dispatch(getOneData(params.id))
     },[dispatch, params])
 
-  return (
-    <div id='AffichageVideo'> 
-        { video && 
-        <div>
-            <div className='containerView'>
-                <div className='jacketView'>
-                    <img src={video.image} alt={video.title}/>
+    return (
+        <div id='AffichageanimeInfo'> 
+            { animeInfo && 
+                <div>
+                    <div className='containerView'>
+                        <div className='jacketView'>
+                            <img src={ animeInfo.image } alt={ animeInfo.title }/>
+                        </div>
+                        <div className='infoView'>
+                            <h3>{ animeInfo.title }</h3>
+                            { animeInfo.episodes && <p>{ animeInfo.episodes } episode{  animeInfo.episodes > 1 && 's'}</p> }
+                            <p>{ animeInfo.genres.map(genre => 
+                                    <span>{genre}<br/></span>)
+                                }
+                            </p>
+                        </div>
+                    </div>
+                    <div className='synopsisView'>
+                        <p>{ animeInfo.synopsis }</p>
+                    </div>
                 </div>
-                <div className='infoView'>
-                    <h3>{video.title}</h3>
-                    {video.episodes && <p>{video.episodes} episode{video.episodes > 1 && 's'}</p>}
-                    <p>{video.genres.map(genre => <span>{genre} </span>)}</p>
-                </div>
-            </div>
-            <div className='synopsisView'>
-                <p>{video.synopsis}</p>
-            </div>
-        </div>}
-    </div>
-  )
+            }
+        </div>
+    )
 }
 
-export default AffichageVideo
+export default AffichageanimeInfo

@@ -1,54 +1,48 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { data, meta } from '../../Component/data/listVideo.json'
-import pagination from './paginationFunction';
-var suggestions = [];
+import { data } from '../../Component/data/listVideo.json'
 const initialState={
-    value: null,
+    value: data,
     one: null,
-    page: 1,
-    totalPage: meta.totalPage
+    page: 1
 }
 
 export const dataSlice = createSlice({
     name: 'data',
     initialState,
     reducers:{
-        getAllVideo:(state, action) =>{
+        changePage: (state, action) => {
+            // state of navigation between pages
             state.page = action.payload ? action.payload : 1;
-            state.value = pagination(data, state.page)
         },
-        input: (state, action) => {
-            const test = (reg, obj) => {
-                let result = reg.test(obj.title)
-                if (!result) {
-                    let genres = obj.genres;
-                    for(let value in genres){
-                        if(reg.test(genres[value])){
+        getDataBySearch: (state, action) => {
+            if(action.payload !== ""){
+                const regex = new RegExp(`^${action.payload.toLowerCase()}`, 'i');//save userInput on regex
+    
+                const loopInGenreArray = (genreArray) => {
+                    for(let item in genreArray){//Browse inside the anime genres
+                        if(regex.test(genreArray[item].toLowerCase())){//input user match with anime genre
                             return true;
                         }
                     }
-                    return false;
+                    return false; // false by default
                 }
-                return result
+                let foundTitles = data.filter(anime => regex.test(anime.title)) //find by titles
+                let foundGenres = data.filter(anime => loopInGenreArray(anime.genres)) //find by genres
+                state.value = [...foundGenres, ...foundTitles]//concat all data found and set in state
             }
-
-            if(action.payload){
-            const regex = new RegExp(`^${action.payload}`, 'i');
-            suggestions = data.sort((a,b) => a.title < b.title ? -1 : 1).filter(v => test(regex, v));
+            else {
+                //state should be full of data
+                //when user delete his inputfield
+                state.value = data 
             }
-
-            state.value = action.payload ? suggestions : pagination(data, state.page);
         },
-        getOneVideo: (state, action) =>{
-            for(let value in data){
-                if(action.payload === data[value]._id){ 
-                    state.one = data[value]
-                }
-            }
+        getOneData: (state, action) =>{
+            // Get the dataAnime by _id
+            state.one = data.filter(value => action.payload === value._id)[0] 
         }
     }
 })
 
-export const { input, getOneVideo, getAllVideo } = dataSlice.actions
+export const { getDataBySearch, getOneData, changePage } = dataSlice.actions
 
 export default dataSlice.reducer
