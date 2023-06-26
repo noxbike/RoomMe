@@ -10,10 +10,7 @@ function Pagination() {
     const totalPage = numberTotalOfPage(data, activePage)
 
     const render = () => {
-        let tab=[];
-        for(let i = 1; i <= totalPage; i++){
-            tab.push(i)
-        }
+        let tab = Array.from({length: totalPage}, (x, i) => i + 1)
         return (
             tab.map((numberPage, index) => 
                 <span 
