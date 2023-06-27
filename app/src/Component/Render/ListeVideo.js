@@ -5,22 +5,22 @@ import { useSelector } from 'react-redux';
 import Pagination from './Pagination';
 
 export default function ListeVideo() {
-	const [sliceData, setSliceData] = useState([])
+	const [sliceOfData, setSliceOfData] = useState([])
   	const data = useSelector(state => state.data.value)
 	const activePage = useSelector(state => state.data.page)
 	
 	useEffect(() => {
-		setSliceData(pagination(data, activePage));
+		setSliceOfData(pagination(data, activePage));
 	},[data,activePage])
 	return (
 		<div className='listVideo'>
 			<div className='showVideo'>
-					{ sliceData && sliceData.map((anime, index) =>
+					{ sliceOfData.length > 0 && sliceOfData.map((anime, index) =>
 						<Link to={ `/${ anime._id }` } key={ index }>
 							<img src={ anime.image } alt={ anime.title }/>
 						</Link>)
 					}
-					{ sliceData < 1 && 
+					{ sliceOfData.length < 1 && 
 						<div className='showVideo'>
 							<h3>Anime not found!</h3>
 						</div>
