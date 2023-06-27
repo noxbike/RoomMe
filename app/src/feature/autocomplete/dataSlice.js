@@ -28,12 +28,14 @@ export const dataSlice = createSlice({
                 }
                 let foundTitles = data.filter(anime => regex.test(anime.title)) //find by titles
                 let foundGenres = data.filter(anime => loopInGenreArray(anime.genres)) //find by genres
+                state.page = 1
                 state.value = [...foundGenres, ...foundTitles]//concat all data found and set in state
             }
             else {
                 //state should be full of data
                 //when user delete his inputfield
-                state.value = data 
+                state.page = 1
+                state.value = data
             }
         },
         getOneData: (state, action) =>{

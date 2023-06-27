@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './Component/Render/Navbar';
 import Filter from './Component/Render/Filter'
-import ListeVideo from './Component/Render/ListeVideo';
-import AffichageVideo from './Component/Render/AffichageVideo';
+import ListeData from './Component/Render/ListeData';
+import ShowDataDetails from './Component/Render/ShowDataDetails';
 import Footer from './Component/Render/Footer'
 
 export default class App extends Component {
@@ -15,8 +15,8 @@ export default class App extends Component {
 					<Filter/>
 				</div>
 				<Routes>
-					<Route path='/' element={<ListeVideo/>} />
-					<Route path='/:id' element={<AffichageVideo/>} />
+					<Route path='/' element={<ListeData/>} />
+					<Route path='/:id' element={<ShowDataDetails/>} />
 				</Routes>
 				<Footer/>
 			</div>

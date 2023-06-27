@@ -85,12 +85,14 @@ img{
     flex-direction: row;
     align-items: stretch;
     margin-top: 20px;
+    color: white;
 }
 
 .infoView{
     width: 70%;
     margin-right: auto;
     margin-left: auto;
+    color: white;
 }
 
 input {

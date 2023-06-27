@@ -4,14 +4,14 @@ import { getOneData } from '../../feature/autocomplete/dataSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 
-function AffichageanimeInfo() {
-    const params = useParams();
+export default function ShowDataDetails() {
     const dispatch = useDispatch();
+    const getIdInUrl= useParams().id;
     const animeInfo = useSelector(state => state.data.one)
 
     useEffect(() => {
-        dispatch(getOneData(params.id))
-    },[dispatch, params])
+        dispatch(getOneData(getIdInUrl))
+    },[dispatch, getIdInUrl])
 
     return (
         <div id='AffichageanimeInfo'> 
@@ -24,10 +24,7 @@ function AffichageanimeInfo() {
                         <div className='infoView'>
                             <h3>{ animeInfo.title }</h3>
                             { animeInfo.episodes && <p>{ animeInfo.episodes } episode{  animeInfo.episodes > 1 && 's'}</p> }
-                            <p>{ animeInfo.genres.map(genre => 
-                                    <span>{genre}<br/></span>)
-                                }
-                            </p>
+                            <p>{ animeInfo.genres.join(' - ')}</p>
                         </div>
                     </div>
                     <div className='synopsisView'>
@@ -38,5 +35,3 @@ function AffichageanimeInfo() {
         </div>
     )
 }
-
-export default AffichageanimeInfo

@@ -4,7 +4,7 @@ import { pagination } from '../../feature/autocomplete/paginationFunction';
 import { useSelector } from 'react-redux';
 import Pagination from './Pagination';
 
-export default function ListeVideo() {
+export default function ListeData() {
 	const [sliceData, setSliceData] = useState([])
   	const data = useSelector(state => state.data.value)
 	const activePage = useSelector(state => state.data.page)

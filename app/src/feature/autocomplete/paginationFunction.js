@@ -7,15 +7,11 @@ export const pagination = (data, activePage) =>{
 }
 
 //counting how many page it's need for pagination to work
-export const numberTotalOfPage = (data) => {
-     let count = 1;
-     while(true){
-         if(pagination(data, count).length){
-             count++;
-         }
-         else{
-             count--;
-             return count
-         }
-     }
+export const getNumberTotalOfPage = (data) => {
+    let count = 1;
+    while (pagination(data, count).length) {
+      count++;
+    }
+    count--;
+    return  Array.from({length: count}, (x, i) => i + 1);
  }
